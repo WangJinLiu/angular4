@@ -1,0 +1,66 @@
+
+<h1>Hello {{title}}</h1>
+<h2> - {{name}}</h2>
+<ul>
+	<li>年龄:{{age}}</li>
+	<li>邮箱:{{email}}</li>
+
+	<li>地址:{{address.city}} {{address.state}} {{address.street}}</li>
+
+	<!-- <li>数组:{{hobbies}}</li> -->
+</ul>
+<!-- 遍历 -->
+<ul>
+	<li *ngFor="let hobby of hobbies;let i = 'index'">
+		{{i + 1}}.{{hobby}} <button (click) = "Delete(i)">X</button>
+	</li>
+</ul>
+
+<!-- 事件 -->
+<button (click) = 'myClick("Dajie")'>Click Me</button>
+<!-- form 表单 -->
+<form (submit) ="addHobby(hobby.value)">
+	<div>
+		<label for="">爱好</label>
+		<input #hobby type="text">
+	</div>
+	
+</form>
+<!-- 分支if -->
+<button (click)="isEdit = !isEdit"></button>
+<!-- 编辑表单  name属性值一定是唯一的 -->
+<div *ngIf='isEdit'>
+	<h1>编辑用户信息</h1>
+	<form action="">
+		<div>
+			<label>姓名：</label>
+			<input type="text" [(ngModel)]='name' name="first">
+		</div>
+		<div>
+			<label>年龄:</label>
+			<input type="text" [(ngModel)]='age' name="age">
+		</div>
+		<div>
+			<label>email:</label>
+			<input type="text" [(ngModel)]='email' name="email">
+		</div>
+		<div>
+			<label>城市：</label>
+			<input type="text" [(ngModel)]='address.city' name="city">
+		</div>
+		<div>
+			<label>市区：</label>
+			<input type="text" [(ngModel)]='address.state' name="state">
+		</div>
+		<div>
+			<label>街道：</label>
+			<input type="text" [(ngModel)]='address.street' name="street">
+		</div>
+
+	</form>
+</div>
+<ul>
+	<li *ngFor='let user of users '>
+		{{user}}
+	</li>
+</ul>

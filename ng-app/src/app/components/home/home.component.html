@@ -1,0 +1,65 @@
+<!-- 添加数据 -->
+
+<div class="container">
+	<button (click) = 'addUser()' *ngIf='judge'>添加信息</button>
+
+	<div>
+		<div class="container">
+			<form (submit) = 'addYes(isEdit)'>
+				<div class="form-group">
+					<label for="">name:</label>
+					<!-- angular4中写了mgModel 就要给个name -->
+					<input type="text" class="form-control" [(ngModel)]='obj.name' name="name">
+				</div>
+				<div class="form-group">
+					<label for="">email:</label>
+					<input type="text" class="form-control" [(ngModel)]='obj.email' name="email">
+				</div>
+				<div class="form-group">
+					<label for="">phone:</label>
+					<input type="text" class="form-control" [(ngModel)]='obj.phone' name="phone">
+				</div>
+				<button type="submit" class="btn btn-primary">确认添加</button>
+			</form>
+		</div>
+		
+	</div>
+
+
+
+
+
+
+
+
+	<!-- 展示数据 -->
+	<div *ngIf='judge'>
+		<div *ngFor='let user of users;' >
+			<div class="well">
+				<ul class="list-group">
+				  	<li class="list-group-item">
+				  		{{user.id}}
+				  		
+				  	</li>
+				  	<li class="list-group-item">
+				  		{{user.name}}
+				  		
+				  	</li>
+				  	<li class="list-group-item">
+				  		{{user.email}}
+				  		
+				  	</li>
+				  	<li class="list-group-item">
+				  		{{user.phone}}
+				  		
+				  	</li>
+				  	<li class="list-group-item" (click)='editUser(user)'><button>编辑</button></li>
+				  	<li class="list-group-item" (click)='deleteUser(user.id)'><button>删除</button></li>
+				  	<a class="btn pull-right btn-success" [(routerLink)]="'/user/'+user.id">查看详情</a>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+ 
+</div>

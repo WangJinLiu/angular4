@@ -1,0 +1,23 @@
+<!-- 导航页面 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+	<div class="container text-light">
+		 <a class="navbar-brand text-light" href="#">用户管理系统</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		      <li class="nav-item active">
+		        <a class="nav-link text-light" routerLink="/" *ngIf='objServer'>主页<span class="sr-only">(current)</span></a>
+		      </li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0">
+		    	 <a class="nav-link text-light" *ngIf='objServer' (click)='change()'>退出登录 <span class="sr-only">(current)</span></a>
+		        <a class="nav-link text-light" routerLink="/register" *ngIf='!objServer'>注册 <span class="sr-only">(current)</span></a>
+		        <a class="nav-link text-light" routerLink="/login" *ngIf='!objServer'>登录 <span class="sr-only">(current)</span></a>
+		    </form>
+		  </div>
+	</div>
+ 
+</nav>

@@ -1,0 +1,29 @@
+<div>
+	<div class="mb-5">
+		<h2 class="d-inline-block"><i class="fa fa-user-circle-o" aria-hidden="true"></i>用户信息</h2>
+		<div class="d-inline-block float-right text-muted"><h6>收支总和:{{sum}}元</h6></div>
+	</div>
+	<table class="table table-hover">
+	  <thead>
+	    <tr>
+	      <th scope="col">ID</th>
+	      <th scope="col">姓名</th>
+	      <th scope="col">邮箱</th>
+	      <th scope="col">电话</th>
+	      <th scope="col">收支</th>
+	      <th scope="col"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr *ngFor='let user of users'>
+	      <th scope="row">{{user.id}}</th>
+	      <td>{{user.name}}</td>
+	      <td>{{user.email}}</td>
+	      <td>{{user.phone}}</td>
+	      <td>{{user.balance}}</td>
+	      <td><a [(routerLink)]="'/userDetail/' + user.id" class="btn btn-light border"><i class="fa fa-minus-circle" aria-hidden="true"></i>详情</a></td>
+	    </tr>
+	  </tbody>
+	</table>
+	
+</div>

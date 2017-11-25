@@ -1,0 +1,31 @@
+管理系统
+
+因为项目中需要用到这些，所以要装这些（bootstrap4中要用到这些）
+cnpm install bootstrap@4.0.0-beta.2 popper jquery --save-dev
+在.angular-cli.json文件中
+"styles": [
+        "styles.css"
+      ],
+中写的是需要依赖的所有css样式
+"scripts": [
+        "../node_modules/_jquery@3.2.1@jquery/dist/jquery.js",
+        "../node_modules/_bootstrap@4.0.0-beta.2@bootstrap/dist/js/bootstrap.js"
+],中写的是所需要的js
+上面的styles和scripts中的内容要自己配置
+
+ng serve --open启动项目
+
+创建组件
+ng g c components/组件名
+ng g c components/home
+ng g c components/user
+ng g c components/login
+ng g c components/register
+ng g c components/userDetail
+ng g c components/addUser
+ng g c components/editUser
+ng g c components/navbar
+ng g c components/sidebar
+ng g c components/settings
+创建服务
+ng g s services/user

@@ -1,0 +1,38 @@
+<div class="container mt-5">
+	<a routerLink='/'><i class="fa fa-external-link-square" aria-hidden="true"></i>返回首页</a>
+	<div class="card">
+
+		<div class="card-header">添加用户</div>
+		<div class="card-body">
+			<form action="">
+				<div class="form-group">
+					<label for="">姓名</label>
+					<input type="text" class="form-control" [(ngModel)]='user.name' name="name">
+				</div>
+				<div class="form-group">
+					<label for="">邮箱</label>
+					<input type="text" class="form-control" [(ngModel)]='user.email' name="email">
+				</div>
+				<div class="form-group">
+					<label for="">手机</label>
+					<input type="text" class="form-control" [(ngModel)]='user.phone' name="phone">
+				</div>
+				<div class="form-group">
+					<label for="">收支</label>
+					<input type="text" class="form-control" [(ngModel)]='user.balance' name="balance">
+				</div>
+				<button class="btn btn-primary btn-block" (click)='postuser()'>添加</button>
+
+
+
+
+
+			</form>
+		</div>
+		
+
+	</div>
+
+
+
+</div>
